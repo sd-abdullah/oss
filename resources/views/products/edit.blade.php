@@ -13,7 +13,7 @@
                     <p class="mb-4">Edit an exist product</p>
                 </header>
 
-                <form action="/products/{{$product->id}}" method="POST">
+                <form action={{ url('products/' . $product->id) }} method="POST">
                     @csrf
                     @method('PUT')
 
@@ -64,7 +64,7 @@
                             Update product
                         </button>
 
-                        <a href="/products" class="text-black ml-4"> Back </a>
+                        <a href={{ url('products') }} class="text-black ml-4"> Back </a>
                     </div>
                 </form>
             </x-card>

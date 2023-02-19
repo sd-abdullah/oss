@@ -3,7 +3,7 @@
     <div class="flex">
         <div>
             <h3 class="text-2xl">
-                <a href="/categories/{{$category["id"]}}">{{$category->name}}</a>
+                <a href={{ url('categories/' . $category->id) }}>{{$category->name}}</a>
             </h3>
         </div>
     </div>

@@ -13,7 +13,7 @@
                     <p class="mb-4">Edit an exist category</p>
                 </header>
 
-                <form action="/categories/{{$category->id}}" method="POST">
+                <form action={{ url('categories/' . $category->id) }} method="POST">
                     @csrf
                     @method('PUT')
 
@@ -43,7 +43,7 @@
                             Update category
                         </button>
 
-                        <a href="/" class="text-black ml-4"> Back </a>
+                        <a href={{ url('/') }} class="text-black ml-4"> Back </a>
                     </div>
                 </form>
             </x-card>

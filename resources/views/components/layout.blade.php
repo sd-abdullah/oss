@@ -105,7 +105,7 @@
 <body class="mb-48">
   
   <nav class="flex justify-between items-center mb-4 mt-4">
-    <a href="/"><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" /></a>
+    <a href={{ url('/') }}><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" /></a>
     <ul class="flex space-x-6 mr-6 text-lg">
       @auth
       <li>
@@ -114,20 +114,20 @@
         </span>
       </li>
       <li>
-        <a href="/" class="hover:text-laravel">
+        <a href={{ url('/') }} class="hover:text-laravel">
           Categories
         </a>
       </li>
       <li>
-        <a href="/products" class="hover:text-laravel">
+        <a href={{ url('products') }} class="hover:text-laravel">
           Products
         </a>
       </li>
       <li>
-        <a href="/" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Manage Products</a>
+        <a href={{ url('/') }} class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Manage Products</a>
       </li>
       <li>
-        <form class="inline" method="POST" action="/">
+        <form class="inline" method="POST" action={{ url('/') }}>
           @csrf
           <button type="submit">
             <i class="fa-solid fa-door-closed"></i> Logout
@@ -141,20 +141,20 @@
         </span>
       </li>
       <li>
-        <a href="/" class="hover:text-laravel">
+        <a href={{ url('/') }} class="hover:text-laravel">
           Categories
         </a>
       </li>
       <li>
-        <a href="/products" class="hover:text-laravel">
+        <a href={{ url('products') }} class="hover:text-laravel">
           Products
         </a>
       </li>
       <li>
-        <a href="/" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
+        <a href={{ url('/') }} class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
       </li>
       <li>
-        <a href="/" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+        <a href={{ url('/') }} class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
       </li>
       @endauth
     </ul>

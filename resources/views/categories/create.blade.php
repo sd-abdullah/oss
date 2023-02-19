@@ -11,7 +11,7 @@
                     </h2>
                 </header>
 
-                <form action={{ url('/categories') }} method="POST">
+                <form action={{ url('categories') }} method="POST">
                     @csrf
 
                     <div class="mb-6">
@@ -43,7 +43,7 @@
                             Create category
                         </button>
 
-                        <a href="/" class="text-black ml-4"> Back </a>
+                        <a href={{ url('/') }} class="text-black ml-4"> Back </a>
                     </div>
                 </form>
             </x-card>

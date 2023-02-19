@@ -62,7 +62,7 @@
                             Create product
                         </button>
 
-                        <a href="/products" class="text-black ml-4"> Back </a>
+                        <a href={{ url('products') }} class="text-black ml-4"> Back </a>
                     </div>
                 </form>
             </x-card>

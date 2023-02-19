@@ -2,7 +2,7 @@
     @section('page-title', 'Show product')
     @include('partials.products._search')
     
-    <a href="/products" class="inline-block text-black ml-4 mb-4"
+    <a href={{ url('products') }} class="inline-block text-black ml-4 mb-4"
                     ><i class="fa-solid fa-arrow-left"></i> Back
                 </a>
                 <div class="mx-4">
@@ -17,10 +17,10 @@
                     </x-card>
                     
                     <x-card class="mt-4 p-2 flex space-x-6">
-                        <a href="/products/{{$product->id}}/edit">
+                        <a href={{ url('products/' . $product->id . '/edit') }}>
                             <i class="fa-solid fa-pencil"></i> Edit product
                         </a>
-                        <form action='/products/{{$product->id}}' method='post'>
+                        <form action={{ url('products/' . $product->id) }} method='post'>
                             @csrf
                             @method('DELETE')
                             <button class='text-red-500'>
