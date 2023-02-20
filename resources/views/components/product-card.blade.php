@@ -3,7 +3,7 @@
     <div class="flex">
         <div>
             <h3 class="text-2xl">
-                <a href={{ url('products/' . $product->id) }}>{{$product->name}}</a>
+                <a href={{ url('products/' . $product->id) }}>{{__("user-inputs.".$product->name)}}</a>
             </h3>
         </div>
     </div>

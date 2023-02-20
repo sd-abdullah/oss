@@ -1,5 +1,5 @@
 <x-layout>
-    @section('page-title', 'Products')
+    @section('page-title', __('products.Products'))
     @include('partials.products._hero')
     @include('partials.products._search')
     
@@ -21,7 +21,7 @@
         <x-product-card :product="$product" /> 
         @empty
         <p>
-            No products found
+            {{__('products.No products found')}}
         </p>    
         @endforelse    
         </div>
@@ -31,6 +31,6 @@
         </div>
         
     @section('creating-product')
-    <a href={{ url('products/create') }} class="absolute top-1/3 right-10 bg-black text-white py-3 px-5">Create product</a>
+    <a href={{ url('products/create') }} class="absolute top-1/3 right-10 bg-black text-white py-3 px-5">{{__('products.Create product')}}</a>
     @endsection
 </x-layout>

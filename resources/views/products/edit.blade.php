@@ -1,5 +1,5 @@
 <x-layout>
-    @section('page-title', 'Edit product')
+    @section('page-title', __('products.Edit product'))
 
     <main>
         <div class="mx-4">
@@ -8,9 +8,9 @@
             >
                 <header class="text-center">
                     <h2 class="text-2xl font-bold uppercase mb-1">
-                        Edit a product
+                        {{__('products.Edit a product')}}
                     </h2>
-                    <p class="mb-4">Edit an exist product</p>
+                    <p class="mb-4">{{__('products.Edit an exist product')}}</p>
                 </header>
 
                 <form action={{ url('products/' . $product->id) }} method="POST">
@@ -21,7 +21,7 @@
                         <label
                             for="name"
                             class="inline-block text-lg mb-2"
-                            >Product name</label
+                            >{{__('products.Product name')}}</label
                         >
                         <input
                             type="text"
@@ -31,7 +31,7 @@
                         />
                         @error('name')
 
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        <p class="text-red-500 text-xs mt-1">{{__('messages.'.$message)}}</p>
                         
                         @enderror
                     </div>
@@ -39,10 +39,10 @@
 
                     <div class="mb-6">
                         <label for="category_id" class="inline-block text-lg mb-2"
-                            >Product's category</label
+                            >{{__("products.Product's category")}}</label
                         >
                         <select name="category_id" class="border border-gray-200 rounded p-2 w-full">
-                        <option value="">Select a category</option>
+                        <option value="">{{__('products.Select a category')}}</option>
                        
                         @foreach($categories as $category)
                         <option value="{{$category->id}}" {{ $product->category_id == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
@@ -51,7 +51,7 @@
                       </select>
                         @error('category_id')
 
-                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                            <p class="text-red-500 text-xs mt-1">{{('messages.'.$message)}}</p>
                         
                         @enderror
                     </div>
@@ -61,10 +61,10 @@
                         <button
                             class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
                         >
-                            Update product
+                            {{__('products.Update product')}}
                         </button>
 
-                        <a href={{ url('products') }} class="text-black ml-4"> Back </a>
+                        <a href={{ url('products') }} class="text-black ml-4"> {{__('products.Back')}} </a>
                     </div>
                 </form>
             </x-card>

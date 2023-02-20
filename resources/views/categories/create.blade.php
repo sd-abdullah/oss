@@ -1,5 +1,5 @@
 <x-layout>
-    @section('page-title', 'Create category')
+    @section('page-title', __('categories.Create category'))
     <main>
         <div class="mx-4">
             <x-card
@@ -7,7 +7,7 @@
             >
                 <header class="text-center">
                     <h2 class="text-2xl font-bold uppercase mb-1">
-                        Create New Category
+                        {{__("categories.Create New Category")}}
                     </h2>
                 </header>
 
@@ -18,18 +18,18 @@
                         <label
                             for="name"
                             class="inline-block text-lg mb-2"
-                            >Category name</label
+                            >{{__("categories.Category name")}}</label
                         >
                         <input
                             type="text"
                             class="border border-gray-200 rounded p-2 w-full"
                             name="name"
-                            placeholder="Smart phones, Kitchen devices, ..."
+                            placeholder="{{__("categories.Smart phones, Kitchen devices, ...")}}"
                             value="{{ old('name') }}"
                         />
                         @error('name')
 
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        <p class="text-red-500 text-xs mt-1">{{__('messages.'.$message)}}</p>
                         
                         @enderror
                     </div>
@@ -40,10 +40,10 @@
                         <button
                             class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
                         >
-                            Create category
+                            {{__("categories.Create category")}}
                         </button>
 
-                        <a href={{ url('/') }} class="text-black ml-4"> Back </a>
+                        <a href={{ url('/') }} class="text-black ml-4"> {{__("categories.Back")}} </a>
                     </div>
                 </form>
             </x-card>

@@ -1,9 +1,9 @@
 <x-layout>
-    @section('page-title', 'Show category')
+    @section('page-title', __('categories.Show category'))
     @include('partials.categories._search')
     
     <a href={{ url('/') }} class="inline-block text-black ml-4 mb-4"
-                    ><i class="fa-solid fa-arrow-left"></i> Back
+                    ><i class="fa-solid fa-arrow-left"></i> {{__('categories.Back')}}
                 </a>
                 <div class="mx-4">
                     <x-card class="py-10">
@@ -18,13 +18,13 @@
                     
                     <x-card class="mt-4 p-2 flex space-x-6">
                         <a href={{ url('categories/' . $category->id . '/edit') }}>
-                            <i class="fa-solid fa-pencil"></i> Edit Category
+                            <i class="fa-solid fa-pencil"></i> {{__('categories.Edit Category')}}
                         </a>
                         <form action={{ url('categories/' . $category->id) }} method='post'>
                             @csrf
                             @method('DELETE')
                             <button class='text-red-500'>
-                                <i class='fa-solid fa-trash'></i>Delete Category
+                                <i class='fa-solid fa-trash'></i>{{__('categories.Delete Category')}}
                             </button>
     
                         </form>

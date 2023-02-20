@@ -8,16 +8,16 @@
 
             <div class="z-10">
                 <h1 class="text-6xl font-bold uppercase text-white">
-                    OS<span class="text-black">Site</span>
+                    {{__('categories.OS')}}<span class="text-black">{{__('categories.Site')}}</span>
                 </h1>
                 <p class="text-2xl text-gray-200 font-bold my-4">
-                    Feel free to make shopping online
+                    {{__('categories.Feel free to make shopping online')}}
                 </p>
                 <div>
                     <a
                         href={{ url('categories/create') }}
                         class="inline-block border-2 border-white text-white py-2 px-4 rounded-xl uppercase mt-2 hover:text-black hover:border-black"
-                        >create category</a
+                        >{{__('categories.create category')}}</a
                     >
                 </div>
             </div>

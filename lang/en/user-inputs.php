@@ -1,0 +1,6 @@
+<?php
+return [
+    'Smart phones and tablets' => 'Smart phones and tablets',
+    'Infinix s4 pro +' => 'Infinix s4 pro +',
+];
+?>

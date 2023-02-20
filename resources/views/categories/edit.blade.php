@@ -1,5 +1,5 @@
 <x-layout>
-    @section('page-title', 'Edit category')
+    @section('page-title', __('categories.Edit category'))
 
     <main>
         <div class="mx-4">
@@ -8,9 +8,9 @@
             >
                 <header class="text-center">
                     <h2 class="text-2xl font-bold uppercase mb-1">
-                        Edit a category
+                        {{__('categories.Edit a category')}}
                     </h2>
-                    <p class="mb-4">Edit an exist category</p>
+                    <p class="mb-4">{{__('categories.Edit an exist category')}}</p>
                 </header>
 
                 <form action={{ url('categories/' . $category->id) }} method="POST">
@@ -21,7 +21,7 @@
                         <label
                             for="name"
                             class="inline-block text-lg mb-2"
-                            >Category name</label
+                            >{{__('categories.Category name')}}</label
                         >
                         <input
                             type="text"
@@ -31,7 +31,7 @@
                         />
                         @error('name')
 
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                        <p class="text-red-500 text-xs mt-1">{{__('messages.'.$message)}}</p>
                         
                         @enderror
                     </div>
@@ -40,10 +40,10 @@
                         <button
                             class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
                         >
-                            Update category
+                            {{__('categories.Update category')}}
                         </button>
 
-                        <a href={{ url('/') }} class="text-black ml-4"> Back </a>
+                        <a href={{ url('/') }} class="text-black ml-4"> {{__('categories.Back')}} </a>
                     </div>
                 </form>
             </x-card>
