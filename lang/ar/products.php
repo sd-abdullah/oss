@@ -17,7 +17,7 @@ return [
     'Back' => 'عودة',
     'Edit a product' => 'تعديل منتج',
     'Edit an exist product' => 'تعديل منتج',
-    'Update product' => 'تعديل منتج',
+    'Update product' => 'تعديل',
     'Edit product' => 'تعديل منتج',
     'Delete product' => 'حذف منتج',
 ];

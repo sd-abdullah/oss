@@ -27,7 +27,7 @@
                             type="text"
                             class="border border-gray-200 rounded p-2 w-full"
                             name="name"
-                            value="{{ $product->name }}"
+                            value="{{ __('user-inputs.'.$product->name ) }}"
                         />
                         @error('name')
 
@@ -45,7 +45,7 @@
                         <option value="">{{__('products.Select a category')}}</option>
                        
                         @foreach($categories as $category)
-                        <option value="{{$category->id}}" {{ $product->category_id == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
+                        <option value="{{$category->id}}" {{ $product->category_id == $category->id ? 'selected' : ''}}>{{ __('user-inputs.'.$category->name) }}</option>
                         @endforeach
                         
                       </select>
@@ -64,7 +64,7 @@
                             {{__('products.Update product')}}
                         </button>
 
-                        <a href={{ url('products') }} class="text-black ml-4"> {{__('products.Back')}} </a>
+                        <a href={{ url('products/'.$product->id) }} class="text-black mx-4"> {{__('products.Back')}} </a>
                     </div>
                 </form>
             </x-card>

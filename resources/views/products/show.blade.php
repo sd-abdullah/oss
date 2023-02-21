@@ -2,8 +2,16 @@
     @section('page-title', __('products.Show product'))
     @include('partials.products._search')
     
-    <a href={{ url('products') }} class="inline-block text-black ml-4 mb-4"
-                    ><i class="fa-solid fa-arrow-left"></i> {{__('products.Back')}}
+    <a href={{ url('products') }} class="inline-block text-black mx-4 mb-4"
+                    > 
+                    @if(App::isLocale('ar'))
+                    <i class="fa-solid fa-arrow-right">
+                    </i> 
+                    @else
+                    <i class="fa-solid fa-arrow-left">
+                    </i> 
+                    @endif
+                     {{__('products.Back')}}
                 </a>
                 <div class="mx-4">
                     <x-card class="py-10">
@@ -11,13 +19,13 @@
                             class="flex flex-col items-center justify-center text-center"
                         >
     
-                            <h3 class="text-2xl mb-2">{{$product->name}}</h3>
+                            <h3 class="text-2xl mb-2">{{__('user-inputs.'.$product->name)}}</h3>
                             
                         </div>
                     </x-card>
                     
                     <x-card class="mt-4 p-2 flex space-x-6">
-                        <a href={{ url('products/' . $product->id . '/edit') }}>
+                        <a href={{ url('products/' . $product->id . '/edit') }} class="{{App::isLocale('ar') ? 'pl-6' : ''}}">
                             <i class="fa-solid fa-pencil"></i> {{__('products.Edit product')}}
                         </a>
                         <form action={{ url('products/' . $product->id) }} method='post'>

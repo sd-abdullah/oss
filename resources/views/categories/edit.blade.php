@@ -27,7 +27,7 @@
                             type="text"
                             class="border border-gray-200 rounded p-2 w-full"
                             name="name"
-                            value="{{ $category->name }}"
+                            value="{{ __('user-inputs.'.$category->name) }}"
                         />
                         @error('name')
 
@@ -43,7 +43,7 @@
                             {{__('categories.Update category')}}
                         </button>
 
-                        <a href={{ url('/') }} class="text-black ml-4"> {{__('categories.Back')}} </a>
+                        <a href={{ url('categories/' . $category->id) }} class="text-black mx-4"> {{__('categories.Back')}} </a>
                     </div>
                 </form>
             </x-card>

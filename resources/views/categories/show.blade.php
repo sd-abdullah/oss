@@ -2,8 +2,16 @@
     @section('page-title', __('categories.Show category'))
     @include('partials.categories._search')
     
-    <a href={{ url('/') }} class="inline-block text-black ml-4 mb-4"
-                    ><i class="fa-solid fa-arrow-left"></i> {{__('categories.Back')}}
+    <a href={{ url('/') }} class="inline-block text-black mx-4 mb-4"
+                    >
+                    @if(App::isLocale('ar'))
+                    <i class="fa-solid fa-arrow-right">
+                    </i> 
+                    @else
+                    <i class="fa-solid fa-arrow-left">
+                    </i> 
+                    @endif
+                    {{__('categories.Back')}}
                 </a>
                 <div class="mx-4">
                     <x-card class="py-10">
@@ -11,13 +19,13 @@
                             class="flex flex-col items-center justify-center text-center"
                         >
     
-                            <h3 class="text-2xl mb-2">{{$category->name}}</h3>
+                            <h3 class="text-2xl mb-2">{{__('user-inputs.'.$category->name)}}</h3>
                             
                         </div>
                     </x-card>
                     
                     <x-card class="mt-4 p-2 flex space-x-6">
-                        <a href={{ url('categories/' . $category->id . '/edit') }}>
+                        <a href={{ url('categories/' . $category->id . '/edit') }} class="{{App::isLocale('ar') ? 'pl-6' : ''}}">
                             <i class="fa-solid fa-pencil"></i> {{__('categories.Edit Category')}}
                         </a>
                         <form action={{ url('categories/' . $category->id) }} method='post'>

@@ -43,7 +43,7 @@
                             {{__("categories.Create category")}}
                         </button>
 
-                        <a href={{ url('/') }} class="text-black ml-4"> {{__("categories.Back")}} </a>
+                        <a href={{ url('/') }} class="text-black mx-4"> {{__("categories.Back")}} </a>
                     </div>
                 </form>
             </x-card>

@@ -9,13 +9,9 @@ return [
     'Welcome To OSS' => 'مرحبا في تسوق',
     'Register' => 'تسجيل مستخدم',
     'Login' => 'تسجيل دخول',
-    'Copyright &copy; 2023, All Rights reserved' => "حقوق النشر &copy; 2023, جميع الحقوق محفوظة",
+    'Copyrights 2023, All Rights reserved' => "حقوق النشر 2023 ، جميع الحقوق محفوظة",
     'Arabic' => 'العربية',
     'English' => 'English',
     'French' => 'française',
-    'Showing' => ' عرض من',
-    'to' => 'الى',
-    'of' => 'من',
-    'results' => 'نتائج' ,
 ];
 ?>

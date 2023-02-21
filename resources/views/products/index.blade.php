@@ -31,6 +31,6 @@
         </div>
         
     @section('creating-product')
-    <a href={{ url('products/create') }} class="absolute top-1/3 right-10 bg-black text-white py-3 px-5">{{__('products.Create product')}}</a>
+    <a href={{ url('products/create') }} class="absolute top-1/3 {{(App::isLocale('ar') ? 'left-10' : 'right-10')}} bg-black text-white py-3 px-5">{{__('products.Create product')}}</a>
     @endsection
 </x-layout>

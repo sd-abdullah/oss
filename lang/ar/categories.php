@@ -15,7 +15,7 @@ return [
     'Back' => 'عودة',
     'Edit a category' => 'تعديل تصنيف',
     'Edit an exist category' => 'تعديل تصنيف',
-    'Update category' => 'تعديل تصنيف',
+    'Update category' => 'تعديل',
     'Edit Category' => 'تعديل تصنيف',
     'Delete Category' => 'حذف تصنيف',
 ];

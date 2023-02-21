@@ -26,12 +26,12 @@
   
 </head>
 
-<body class="mb-48">
+<body class="mb-48" dir="{{(App::isLocale('ar') ? 'rtl' : 'ltr')}}">
   
   <nav class="flex justify-between items-center mb-4 mt-4">
     <a href={{ url('/') }}><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" /></a>
     @include('partials/language_switcher')
-    <ul class="flex space-x-6 mr-6 text-lg">
+    <ul class="flex space-x-6 mx-6 text-lg">
       @auth
       <li>
         <span class="font-bold uppercase">
@@ -61,7 +61,7 @@
       </li>
       @else
       <li>
-        <span class="font-bold uppercase">
+        <span class="font-bold uppercase {{(App::isLocale('ar') ? 'pl-3 text-xl' : '')}}">
             {{__('main-theme.Welcome To OSS')}}
         </span>
       </li>
@@ -90,7 +90,7 @@
   </main>
   <footer
     class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
-    <p class="ml-2">{{__('main-theme.Copyright &copy; 2023, All Rights reserved')}}</p>
+    <p class="mx-2"><i class="fa-regular fa-copyright px-2"></i>{{__('main-theme.Copyrights 2023, All Rights reserved')}}</p>
   @yield('creating-product')
   @yield('creating-category')
   </footer>

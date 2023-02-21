@@ -30,6 +30,6 @@
 
 
 @section('creating-category')
-<a href={{ url('categories/create') }} class="absolute top-1/3 right-10 bg-black text-white py-3 px-5">{{__('categories.Create category')}}</a>
+<a href={{ url('categories/create') }} class="absolute top-1/3 {{(App::isLocale('ar') ? 'left-10' : 'right-10')}} bg-black text-white py-3 px-5">{{__('categories.Create category')}}</a>
 @endsection
 </x-layout>
