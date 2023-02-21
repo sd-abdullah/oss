@@ -11,7 +11,7 @@
                     </h2>
                 </header>
 
-                <form action={{ url('categories') }} method="POST">
+                <form action={{ route('categories.store') }} method="POST">
                     @csrf
 
                     <div class="mb-6">
@@ -43,7 +43,7 @@
                             {{__("categories.Create category")}}
                         </button>
 
-                        <a href={{ url('/') }} class="text-black mx-4"> {{__("categories.Back")}} </a>
+                        <a href={{ route('categories.index') }} class="text-black mx-4"> {{__("categories.Back")}} </a>
                     </div>
                 </form>
             </x-card>

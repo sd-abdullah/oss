@@ -18,5 +18,7 @@ return [
     'Update category' => 'تعديل',
     'Edit Category' => 'تعديل تصنيف',
     'Delete Category' => 'حذف تصنيف',
+    'Show category' => 'عرض تصنيف',
+    'Edit category' => 'تعديل تصنيف'
 ];
 ?>

@@ -13,7 +13,7 @@
                     <p class="mb-4">{{__('products.Edit an exist product')}}</p>
                 </header>
 
-                <form action={{ url('products/' . $product->id) }} method="POST">
+                <form action={{ route('products.update', $product->id) }} method="POST">
                     @csrf
                     @method('PUT')
 
@@ -64,7 +64,7 @@
                             {{__('products.Update product')}}
                         </button>
 
-                        <a href={{ url('products/'.$product->id) }} class="text-black mx-4"> {{__('products.Back')}} </a>
+                        <a href={{ route('products.show', $product->id) }} class="text-black mx-4"> {{__('products.Back')}} </a>
                     </div>
                 </form>
             </x-card>

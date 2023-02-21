@@ -2,7 +2,7 @@
     @section('page-title', __('products.Show product'))
     @include('partials.products._search')
     
-    <a href={{ url('products') }} class="inline-block text-black mx-4 mb-4"
+    <a href={{ route('products.index') }} class="inline-block text-black mx-4 mb-4"
                     > 
                     @if(App::isLocale('ar'))
                     <i class="fa-solid fa-arrow-right">
@@ -25,10 +25,10 @@
                     </x-card>
                     
                     <x-card class="mt-4 p-2 flex space-x-6">
-                        <a href={{ url('products/' . $product->id . '/edit') }} class="{{App::isLocale('ar') ? 'pl-6' : ''}}">
+                        <a href={{ route('products.edit', $product->id) }} class="{{App::isLocale('ar') ? 'pl-6' : ''}}">
                             <i class="fa-solid fa-pencil"></i> {{__('products.Edit product')}}
                         </a>
-                        <form action={{ url('products/' . $product->id) }} method='post'>
+                        <form action={{ route('products.destroy', $product->id) }} method='post'>
                             @csrf
                             @method('DELETE')
                             <button class='text-red-500'>

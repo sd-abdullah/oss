@@ -1,6 +1,6 @@
 <?php
 return [
-    'Productes' => 'المنتجات',
+    'Products' => 'المنتجات',
     'OS' => 'تسو',
     'Site' => 'ق',
     'Feel free to make shopping online' => 'تسوق بحرية عبر الانترنت',
@@ -20,5 +20,6 @@ return [
     'Update product' => 'تعديل',
     'Edit product' => 'تعديل منتج',
     'Delete product' => 'حذف منتج',
+    'Show product' => 'عرض منتج'
 ];
 ?>

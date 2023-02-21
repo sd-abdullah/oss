@@ -16,27 +16,29 @@ use App\Http\Controllers\CustomizeController;
 |
 */
 
-Route::controller(CustomizeController::class)->group(function(){
-    Route::get('/language/{locale}','localDeterminition');
+Route::get('/language/{locale}',[CustomizeController::class, 'localDeterminition']) -> name('language');
+
+
+Route::get('/',[CategoryController::class, 'index']);
+
+Route::group(['prefix' => 'categories', 'as' => 'categories.', 'controller' => CategoryController::class ], function(){
+        Route::get('/','index') -> name('index');
+        Route::get('/create','create') -> name('create');
+        Route::post('/','store') -> name('store');
+        Route::get('/{category}','show') -> name('show');
+        Route::get('/{category}/edit','edit') -> name('edit');
+        Route::put('/{category}','update') -> name('update');
+        Route::delete('/{category}','destroy') -> name('destroy');
 });
 
-Route::controller(CategoryController::class)->group(function(){
-    Route::get('/','index');
-    Route::get('/categories/create','create');
-    Route::post('/categories','store');
-    Route::get('/categories/{category}','show');
-    Route::get('/categories/{category}/edit','edit');
-    Route::put('/categories/{category}','update');
-    Route::delete('/categories/{category}','destroy');
-});
 
 
-Route::controller(ProductController::class)->group(function(){
-    Route::get('/products','index');
-    Route::get('/products/create','create');
-    Route::post('/products','store');
-    Route::get('/products/{product}','show');
-    Route::get('/products/{product}/edit','edit');
-    Route::put('/products/{product}','update');
-    Route::delete('/products/{product}','destroy');
+Route::group(['prefix' => 'products', 'as' => 'products.', 'controller' => ProductController::class], function(){
+        Route::get('/','index') -> name('index');
+        Route::get('/create','create') -> name('create');
+        Route::post('/','store') -> name('store');
+        Route::get('/{product}','show') -> name('show');
+        Route::get('/{product}/edit','edit') -> name('edit');
+        Route::put('/{product}','update') -> name('update');
+        Route::delete('/{product}','destroy') -> name('destroy');
 });

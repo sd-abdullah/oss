@@ -18,5 +18,7 @@ return [
     'Update category' => 'Update category',
     'Edit Category' => 'Edit Category',
     'Delete Category' => 'Delete Category',
+    'Show category' => 'Show category',
+    'Edit category' => 'Edit category'
 ];
 ?>

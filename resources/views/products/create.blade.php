@@ -11,7 +11,7 @@
                     </h2>
                 </header>
 
-                <form action={{ url('/products') }} method="POST">
+                <form action={{ route('products.store') }} method="POST">
                     @csrf
 
                     <div class="mb-6">
@@ -62,7 +62,7 @@
                             {{__('products.Create product')}}
                         </button>
 
-                        <a href={{ url('products') }} class="text-black mx-4"> {{__('products.Back')}} </a>
+                        <a href={{ route('products.index') }} class="text-black mx-4"> {{__('products.Back')}} </a>
                     </div>
                 </form>
             </x-card>

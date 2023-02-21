@@ -1,6 +1,6 @@
 <?php
 return [
-    'Productes' => 'Productes',
+    'Products' => 'Products',
     'OS' => 'OS',
     'Site' => 'Site',
     'Feel free to make shopping online' => 'Feel free to make shopping online',
@@ -20,5 +20,6 @@ return [
     'Update product' => 'Update product',
     'Edit product' => 'Edit product',
     'Delete product' => 'Delete product',
+    'Show product' => 'Show product'
 ];
 ?>

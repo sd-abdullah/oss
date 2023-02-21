@@ -2,7 +2,7 @@
     @section('page-title', __('categories.Show category'))
     @include('partials.categories._search')
     
-    <a href={{ url('/') }} class="inline-block text-black mx-4 mb-4"
+    <a href={{ route('categories.index') }} class="inline-block text-black mx-4 mb-4"
                     >
                     @if(App::isLocale('ar'))
                     <i class="fa-solid fa-arrow-right">
@@ -25,10 +25,10 @@
                     </x-card>
                     
                     <x-card class="mt-4 p-2 flex space-x-6">
-                        <a href={{ url('categories/' . $category->id . '/edit') }} class="{{App::isLocale('ar') ? 'pl-6' : ''}}">
+                        <a href={{ route('categories.edit', $category->id) }} class="{{App::isLocale('ar') ? 'pl-6' : ''}}">
                             <i class="fa-solid fa-pencil"></i> {{__('categories.Edit Category')}}
                         </a>
-                        <form action={{ url('categories/' . $category->id) }} method='post'>
+                        <form action={{ route('categories.destroy', $category->id) }} method='post'>
                             @csrf
                             @method('DELETE')
                             <button class='text-red-500'>

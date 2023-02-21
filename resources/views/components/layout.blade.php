@@ -28,10 +28,10 @@
 
 <body class="mb-48" dir="{{(App::isLocale('ar') ? 'rtl' : 'ltr')}}">
   
-  <nav class="flex justify-between items-center mb-4 mt-4">
-    <a href={{ url('/') }}><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" /></a>
+  <nav class="flex justify-between items-center mb-4 mt-4 mx-3">
+    <a href={{ route('categories.index') }}><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" /></a>
     @include('partials/language_switcher')
-    <ul class="flex space-x-6 mx-6 text-lg">
+    <ul class="flex space-x-3 text-lg">
       @auth
       <li>
         <span class="font-bold uppercase">
@@ -39,20 +39,20 @@
         </span>
       </li>
       <li>
-        <a href={{ url('/') }} class="hover:text-laravel">
+        <a href={{ route('categories.index') }} class="hover:text-laravel">
           {{__('main-theme.Categories')}}
         </a>
       </li>
       <li>
-        <a href={{ url('products') }} class="hover:text-laravel">
+        <a href={{ route('products.index') }} class="hover:text-laravel">
           {{__('main-theme.Products')}}
         </a>
       </li>
       <li>
-        <a href={{ url('/') }} class="hover:text-laravel"><i class="fa-solid fa-gear"></i> {{__('main-theme.Manage Products')}}</a>
+        <a href={{ route('categories.index') }} class="hover:text-laravel"><i class="fa-solid fa-gear"></i> {{__('main-theme.Manage Products')}}</a>
       </li>
       <li>
-        <form class="inline" method="POST" action={{ url('/') }}>
+        <form class="inline" method="POST" action={{ route('categories.index') }}>
           @csrf
           <button type="submit">
             <i class="fa-solid fa-door-closed"></i> {{__('main-theme.Logout')}}
@@ -61,25 +61,25 @@
       </li>
       @else
       <li>
-        <span class="font-bold uppercase {{(App::isLocale('ar') ? 'pl-3 text-xl' : '')}}">
+        <span class="font-bold uppercase {{(App::isLocale('ar') ? 'pl-3' : '')}}">
             {{__('main-theme.Welcome To OSS')}}
         </span>
       </li>
       <li>
-        <a href={{ url('/') }} class="hover:text-laravel">
+        <a href={{ route('categories.index') }} class="hover:text-laravel">
           {{__('main-theme.Categories')}}
         </a>
       </li>
       <li>
-        <a href={{ url('products') }} class="hover:text-laravel">
+        <a href={{ route('products.index') }} class="hover:text-laravel">
           {{__('main-theme.Products')}}
         </a>
       </li>
       <li>
-        <a href={{ url('/') }} class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> {{__('main-theme.Register')}}</a>
+        <a href={{ route('categories.index') }} class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> {{__('main-theme.Register')}}</a>
       </li>
       <li>
-        <a href={{ url('/') }} class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i> {{__('main-theme.Login')}}</a>
+        <a href={{ route('categories.index') }} class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i> {{__('main-theme.Login')}}</a>
       </li>
       @endauth
     </ul>

@@ -35,7 +35,7 @@ class CategoryController extends Controller
         $category = new Category();
         $category['name'] = $request->name;
         $category->save();
-        return redirect('/')->with('message', 'Category created successfully!');
+        return redirect('/categories')->with('message', 'Category created successfully!');
     }
 
     /**
@@ -66,7 +66,7 @@ class CategoryController extends Controller
         $category->update([
             'name' => $request->name
         ]);
-        return redirect('/')->with('message', 'Category updated successfully!');
+        return redirect('/categories')->with('message', 'Category updated successfully!');
     }
 
     /**
@@ -75,6 +75,6 @@ class CategoryController extends Controller
     public function destroy(Category $category): RedirectResponse
     {
         $category->delete();
-        return redirect('/')->with('message', 'Category deleted successfully!');
+        return redirect('/categories')->with('message', 'Category deleted successfully!');
     }
 }
