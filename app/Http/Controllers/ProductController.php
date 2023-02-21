@@ -39,7 +39,7 @@ class ProductController extends Controller
         $product['name'] = $request->name;
         $product['category_id'] = $request->category_id;
         $product->save();
-        return redirect('/products')->with('message', 'Product created successfully!');
+        return redirect('/products')->with('message', __('messages.Product created successfully!'));
     }
 
     /**
@@ -70,7 +70,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'category_id' => $request->category_id
         ]);
-        return redirect('/products')->with('message', 'Product updated successfully!');
+        return redirect('/products')->with('message', __('messages.Product updated successfully!'));
     }
 
     /**
@@ -79,6 +79,6 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect('/products')->with('message', 'Product deleted successfully!');
+        return redirect('/products')->with('message', __('messages.Product deleted successfully!'));
     }
 }

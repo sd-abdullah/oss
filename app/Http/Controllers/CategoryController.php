@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
-use Illuminate\Http\RedirectResponse;
 
 class CategoryController extends Controller
 {
@@ -35,7 +36,7 @@ class CategoryController extends Controller
         $category = new Category();
         $category['name'] = $request->name;
         $category->save();
-        return redirect('/categories')->with('message', 'Category created successfully!');
+        return redirect('/categories')->with('message', __('messages.Category created successfully!'));
     }
 
     /**
@@ -66,7 +67,7 @@ class CategoryController extends Controller
         $category->update([
             'name' => $request->name
         ]);
-        return redirect('/categories')->with('message', 'Category updated successfully!');
+        return redirect('/categories')->with('message', __('messages.Category updated successfully!'));
     }
 
     /**
@@ -74,7 +75,12 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category): RedirectResponse
     {
-        $category->delete();
-        return redirect('/categories')->with('message', 'Category deleted successfully!');
+        if(Product::whereBelongsTo($category)->get()->isEmpty()){
+            $category->delete();
+            $destroy_message = __('messages.Category_deleted_successfully');
+        }else{
+            $destroy_message = __('messages.Category_cant_be_deleted');
+        }
+        return redirect('/categories')->with('message', $destroy_message);
     }
 }

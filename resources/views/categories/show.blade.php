@@ -1,7 +1,9 @@
 <x-layout>
     @section('page-title', __('categories.Show category'))
     @include('partials.categories._search')
-    
+
+   
+
     <a href={{ route('categories.index') }} class="inline-block text-black mx-4 mb-4"
                     >
                     @if(App::isLocale('ar'))
