@@ -9,7 +9,7 @@ return [
     'The name field must not be greater than 90 characters.' => 'يجب الا يتجاوز الاسم 90 حرف.',
     'The name has already been taken.' => 'هذا الاسم موجود من قبل.',
     'The name field is required.' => 'الاسم مطلوب.',
-    'Category_deleted_successfully' => 'تم حذف تصنيف بنجاح!',
-    'Category_cant_be_deleted' => "لا يمكن حذف تصنيف يحتوي منتجات"
+    'Category deleted successfully' => 'تم حذف تصنيف بنجاح!',
+    'Category cant be deleted' => "لا يمكن حذف تصنيف يحتوي منتجات"
 ];
 ?>

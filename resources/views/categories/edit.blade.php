@@ -27,7 +27,7 @@
                             type="text"
                             class="border border-gray-200 rounded p-2 w-full"
                             name="name"
-                            value="{{ __('user-inputs.'.$category->name) }}"
+                            value="{{ __($category->name) }}"
                         />
                         @error('name')
 

@@ -27,7 +27,7 @@
                             type="text"
                             class="border border-gray-200 rounded p-2 w-full"
                             name="name"
-                            value="{{ __('user-inputs.'.$product->name ) }}"
+                            value="{{ __($product->name) }}"
                         />
                         @error('name')
 
@@ -45,7 +45,7 @@
                         <option value="">{{__('products.Select a category')}}</option>
                        
                         @foreach($categories as $category)
-                        <option value="{{$category->id}}" {{ $product->category_id == $category->id ? 'selected' : ''}}>{{ __('user-inputs.'.$category->name) }}</option>
+                        <option value="{{$category->id}}" {{ $product->category_id == $category->id ? 'selected' : ''}}>{{ __($category->name) }}</option>
                         @endforeach
                         
                       </select>

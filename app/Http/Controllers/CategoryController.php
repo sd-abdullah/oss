@@ -77,9 +77,9 @@ class CategoryController extends Controller
     {
         if(Product::whereBelongsTo($category)->get()->isEmpty()){
             $category->delete();
-            $destroy_message = __('messages.Category_deleted_successfully');
+            $destroy_message = __('messages.Category deleted successfully');
         }else{
-            $destroy_message = __('messages.Category_cant_be_deleted');
+            $destroy_message = __('messages.Category cant be deleted');
         }
         return redirect('/categories')->with('message', $destroy_message);
     }

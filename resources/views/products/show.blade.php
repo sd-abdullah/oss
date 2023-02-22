@@ -19,7 +19,7 @@
                             class="flex flex-col items-center justify-center text-center"
                         >
     
-                            <h3 class="text-2xl mb-2">{{__('user-inputs.'.$product->name)}}</h3>
+                            <h3 class="text-2xl mb-2">{{__($product->name)}}</h3>
                             
                         </div>
                     </x-card>

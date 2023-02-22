@@ -9,7 +9,7 @@ return [
     'The name field must not be greater than 90 characters.' => 'The name field must not be greater than 90 characters.',
     'The name has already been taken.' => 'The name has already been taken.',
     'The name field is required.' => 'The name field is required.',
-    'Category_deleted_successfully' => 'Category deleted successfully!',
-    'Category_cant_be_deleted' => "Can't delete category that contains products!"
+    'Category deleted successfully' => 'Category deleted successfully!',
+    'Category cant be deleted' => "Can't delete category that contains products!"
 ];
 ?>
