@@ -39,12 +39,12 @@
         </span>
       </li>
       <li>
-        <a href={{ route('categories.index') }} class="hover:text-laravel">
+        <a href={{ route('categories.index') }} class="hover:text-laravel {{(Route::current()->getName() === 'categories.index') ? 'text-laravel font-bold' : ''}}">
           {{__('main-theme.Categories')}}
         </a>
       </li>
       <li>
-        <a href={{ route('products.index') }} class="hover:text-laravel">
+        <a href={{ route('products.index') }} class="hover:text-laravel {{(Route::current()->getName() === 'products.index') ? 'text-laravel font-bold' : ''}}">
           {{__('main-theme.Products')}}
         </a>
       </li>
@@ -66,12 +66,12 @@
         </span>
       </li>
       <li>
-        <a href={{ route('categories.index') }} class="hover:text-laravel">
+        <a href={{ route('categories.index') }} class="hover:text-laravel {{(Route::current()->getName() === 'categories.index') ? 'text-laravel font-bold' : ''}}">
           {{__('main-theme.Categories')}}
         </a>
       </li>
       <li>
-        <a href={{ route('products.index') }} class="hover:text-laravel">
+        <a href={{ route('products.index') }} class="hover:text-laravel {{(Route::current()->getName() === 'products.index') ? 'text-laravel font-bold' : ''}}">
           {{__('main-theme.Products')}}
         </a>
       </li>
